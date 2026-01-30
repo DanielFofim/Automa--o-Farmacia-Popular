@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4 (Python 3.12.3 on win32)" generated="2026-01-30T10:34:30.589910" rpa="false" schemaversion="5">
+<suite id="s1" name="Automação Farmacia Popular" source="C:\Users\RETAGUARDA\Desktop\Automação Farmacia Popular">
+<suite id="s1-s1" name="Tests" source="C:\Users\RETAGUARDA\Desktop\Automação Farmacia Popular\tests">
+<suite id="s1-s1-s1" name="Test Login" source="C:\Users\RETAGUARDA\Desktop\Automação Farmacia Popular\tests\test_login.robot">
+<test id="s1-s1-s1-t1" name="Teste 01: Realizar Login com Matrícula da Loja" line="7">
+<kw name="Abrir Navegador" owner="common_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:34:31.224441" level="INFO">Opening browser 'Firefox' to base url 'https://cosmosnetstg.pmenos.com.br/ReactPainelDeVendasConfiguracao/#/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-30T10:34:31.224441" elapsed="12.064153"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-01-30T10:34:43.290607" elapsed="0.311742"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>${WAIT_TIME}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-01-30T10:34:43.602349" elapsed="0.007020"/>
+</kw>
+<status status="PASS" start="2026-01-30T10:34:31.224441" elapsed="12.385108"/>
+</kw>
+<kw name="Clicar Botão Acessar CosmosNet" owner="common_keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:34:43.646637" level="INFO">Clicking button 'xpath://button[@class='btn btn-primary' and contains(text(), 'Acessar CosmosNet')]'.</msg>
+<arg>xpath://button[@class='btn btn-primary' and contains(text(), 'Acessar CosmosNet')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T10:34:43.645639" elapsed="1.872173"/>
+</kw>
+<status status="PASS" start="2026-01-30T10:34:43.645639" elapsed="1.872173"/>
+</kw>
+<kw name="Fazer Login Com Matrícula" owner="common_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:Usuario</arg>
+<arg>${WAIT_TIME}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-01-30T10:34:45.527354" elapsed="0.008044"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:34:45.535398" level="INFO">Typing text '90008209' into text field 'id:Usuario'.</msg>
+<arg>id:Usuario</arg>
+<arg>${matricula}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T10:34:45.535398" elapsed="0.029090"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:34:45.564488" level="INFO">Typing text '123456skdlvn' into text field 'id:Senha'.</msg>
+<arg>id:Senha</arg>
+<arg>${senha}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T10:34:45.564488" elapsed="0.020843"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:34:45.585331" level="INFO">Clicking button 'xpath://input[@type='submit' and @value='Efetuar Login']'.</msg>
+<arg>xpath://input[@type='submit' and @value='Efetuar Login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-30T10:34:45.585331" elapsed="5.385058"/>
+</kw>
+<arg>${MATRICULA_LOJA}</arg>
+<arg>${SENHA_VENDEDOR}</arg>
+<status status="PASS" start="2026-01-30T10:34:45.527354" elapsed="5.443035"/>
+</kw>
+<kw name="Verificar Login Realizado" owner="common_keywords">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2026-01-30T10:34:51.046186" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-01-30T10:34:51.046186" level="FAIL">InvalidSelectorException: Message: Given xpath expression "//*[contains(@class, 'dashboard')] | xpath://*[contains(@class, 'home')]" is invalid: SyntaxError: Document.evaluate: The expression is not a legal expression; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+InvalidSelectorError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:455:5
+find_@chrome://remote/content/shared/DOM.sys.mjs:170:11
+</msg>
+<arg>xpath://*[contains(@class, 'dashboard')] | xpath://*[contains(@class, 'home')]</arg>
+<arg>${WAIT_TIME}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2026-01-30T10:34:50.983353" elapsed="0.081781">InvalidSelectorException: Message: Given xpath expression "//*[contains(@class, 'dashboard')] | xpath://*[contains(@class, 'home')]" is invalid: SyntaxError: Document.evaluate: The expression is not a legal expression; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+InvalidSelectorError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:455:5
+find_@chrome://remote/content/shared/DOM.sys.mjs:170:11
+</status>
+</kw>
+<status status="FAIL" start="2026-01-30T10:34:50.982356" elapsed="0.083775">InvalidSelectorException: Message: Given xpath expression "//*[contains(@class, 'dashboard')] | xpath://*[contains(@class, 'home')]" is invalid: SyntaxError: Document.evaluate: The expression is not a legal expression; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+InvalidSelectorError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:455:5
+find_@chrome://remote/content/shared/DOM.sys.mjs:170:11
+</status>
+</kw>
+<kw name="Abrir Farmacia Popular Pague Menos" owner="common_keywords">
+<status status="NOT RUN" start="2026-01-30T10:34:51.066131" elapsed="0.000998"/>
+</kw>
+<kw name="Fechar Navegador" owner="common_keywords">
+<status status="NOT RUN" start="2026-01-30T10:34:51.068127" elapsed="0.000997"/>
+</kw>
+<tag>login</tag>
+<tag>smoke</tag>
+<status status="FAIL" start="2026-01-30T10:34:31.214409" elapsed="19.855713">InvalidSelectorException: Message: Given xpath expression "//*[contains(@class, 'dashboard')] | xpath://*[contains(@class, 'home')]" is invalid: SyntaxError: Document.evaluate: The expression is not a legal expression; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+InvalidSelectorError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:455:5
+find_@chrome://remote/content/shared/DOM.sys.mjs:170:11
+</status>
+</test>
+<status status="FAIL" start="2026-01-30T10:34:30.726404" elapsed="20.363664"/>
+</suite>
+<status status="FAIL" start="2026-01-30T10:34:30.702881" elapsed="20.404141"/>
+</suite>
+<status status="FAIL" start="2026-01-30T10:34:30.599951" elapsed="20.535994"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">login</stat>
+<stat pass="0" fail="1" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="Automação Farmacia Popular" id="s1" pass="0" fail="1" skip="0">Automação Farmacia Popular</stat>
+<stat name="Tests" id="s1-s1" pass="0" fail="1" skip="0">Automação Farmacia Popular.Tests</stat>
+<stat name="Test Login" id="s1-s1-s1" pass="0" fail="1" skip="0">Automação Farmacia Popular.Tests.Test Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
